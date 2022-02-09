@@ -58,10 +58,4 @@ public class ParkingManager {
         }
         return false;
     }
-
-    public static void main(String[] args) {
-        ParkingManager manager = new ParkingManager();
-        boolean out = manager.fiveDauPass(6545, WeekDay.TUE);
-        System.out.println(out);
-    }
 }
