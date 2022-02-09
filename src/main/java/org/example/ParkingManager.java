@@ -1,14 +1,10 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ParkingManager {
 
     public boolean sevenDauPass(CarPassOfDay carPassOfDay) {
         int out;
         out = carPassOfDay.getNumberCar() % 7;
-        System.out.println(out);
         switch (out) {
             case 0:
                 return carPassOfDay.getWeekDay().name().contains(WeekDay.MON.name());
@@ -31,7 +27,6 @@ public class ParkingManager {
     public boolean fiveDauPass(CarPassOfDay carPassOfDay) {
         int out;
         out = carPassOfDay.getNumberCar() % 5;
-        System.out.println(out);
         switch (out) {
             case 0:
                 return carPassOfDay.getWeekDay().name().contains(WeekDay.MON.name()) ||
