@@ -6,7 +6,7 @@ public class ParkingManager {
         int out;
         out = carPassOfDay.getNumberCar() % 7;
         switch (out) {
-            case 0:
+            case 8:
                 return carPassOfDay.getWeekDay().name().contains(WeekDay.MON.name());
             case 1:
                 return carPassOfDay.getWeekDay().name().contains(WeekDay.TUE.name());
