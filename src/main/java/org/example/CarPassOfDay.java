@@ -1,16 +1,16 @@
 package org.example;
 
 public class CarPassOfDay {
-    private int numberCar = 0;
+    private int carNumber = 0;
     private WeekDay weekDay = null;
 
-    public CarPassOfDay(int numberCar, WeekDay weekDay) {
-        this.numberCar = numberCar;
+    public CarPassOfDay(int carNumber, WeekDay weekDay) {
+        this.carNumber = carNumber;
         this.weekDay = weekDay;
     }
 
-    public int getNumberCar() {
-        return numberCar;
+    public Integer getCarNumber() {
+        return carNumber;
     }
 
     public WeekDay getWeekDay() {

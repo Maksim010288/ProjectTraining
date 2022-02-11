@@ -8,16 +8,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ParkingManagerTest {
 
     @Test
-    void sevenDauPass() {
+    void sevenDayPass() {
+        CarPassOfDay carPassOfDay = new CarPassOfDay(78676, WeekDay.THURSDAY);
         ParkingManager manager = new ParkingManager();
-        CarPassOfDay carPassOfDay = new CarPassOfDay(56434, WeekDay.FRI);
-        assertFalse(manager.sevenDauPass(carPassOfDay));
+        assertTrue(manager.sevenDayPass(carPassOfDay));
     }
 
     @Test
-    void fiveDauPass() {
-        CarPassOfDay carPassOfDay = new CarPassOfDay(56434, WeekDay.FRI);
+    void fiveDayPass() {
+        CarPassOfDay carPassOfDay = new CarPassOfDay(78674, WeekDay.FRIDAY);
+        CarPassOfDay carPassOfDay1 = new CarPassOfDay(78674, WeekDay.SATERDAY);
+        CarPassOfDay carPassOfDay2 = new CarPassOfDay(78674, WeekDay.SUNDAY);
         ParkingManager manager = new ParkingManager();
-        assertTrue(manager.fiveDauPass(carPassOfDay));
+        assertTrue(manager.fiveDayPass(carPassOfDay));
+        assertTrue(manager.fiveDayPass(carPassOfDay1));
+        assertTrue(manager.fiveDayPass(carPassOfDay2));
     }
 }
