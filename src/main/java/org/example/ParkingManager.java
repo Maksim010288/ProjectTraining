@@ -6,7 +6,7 @@ import java.util.Map;
 public class ParkingManager {
     Map<Integer, WeekDay> weekDayMap = new HashMap<>();
     WeekDay[] weekDay = {WeekDay.MONDAY, WeekDay.TUESDAY, WeekDay.WEDNESDAY,
-                         WeekDay.THURSDAY, WeekDay.FRIDAY, WeekDay.SATERDAY,
+                         WeekDay.THURSDAY, WeekDay.FRIDAY, WeekDay.SATURDAY,
                          WeekDay.SUNDAY};
 
     public boolean sevenDayPass(CarPassOfDay carPassOfDay) {
