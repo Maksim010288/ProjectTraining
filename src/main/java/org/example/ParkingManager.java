@@ -1,41 +1,31 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ParkingManager {
-    Map<Integer, WeekDay> weekDayMap = new HashMap<>();
-    WeekDay[] weekDay = {WeekDay.MONDAY, WeekDay.TUESDAY, WeekDay.WEDNESDAY,
-                         WeekDay.THURSDAY, WeekDay.FRIDAY, WeekDay.SATURDAY,
-                         WeekDay.SUNDAY};
+   MapDayAndNumber mapDayAndNumber;
+
+    public ParkingManager() {
+    }
+
+    public ParkingManager(MapDayAndNumber mapDayAndNumber) {
+        this.mapDayAndNumber = mapDayAndNumber;
+    }
 
     public boolean sevenDayPass(CarPassOfDay carPassOfDay) {
-        int count = 0;
-        int out = carPassOfDay.getCarNumber() % 7;
-        System.out.println(out);
-        weekDayMap.put(out, carPassOfDay.getWeekDay());
-        while (count <= out) {
-            if (count == out && weekDayMap.containsValue(weekDay[count])) {
-                return true;
-            }
-            count++;
-        }
-        return false;
+        int remainder = carPassOfDay.getCarNumber() % 7;
+        return mapDayAndNumber.carNumberDay.get(remainder) == carPassOfDay.getWeekDay();
     }
 
     public boolean fiveDayPass(CarPassOfDay carPassOfDay) {
-        int count = 0;
-        int out = carPassOfDay.getCarNumber() % 5;
-        System.out.println(out);
-        weekDayMap.put(out, carPassOfDay.getWeekDay());
-        while (count <= out) {
-            if (count == out && weekDayMap.containsValue(weekDay[count]) ||
-                                weekDayMap.containsValue(weekDay[5]) ||
-                                weekDayMap.containsValue(weekDay[6])){
-                return true;
-            }
-            count++;
-        }
-        return false;
+        int remainder = carPassOfDay.getCarNumber() % 5;
+        return mapDayAndNumber.carNumberDay.get(remainder) == carPassOfDay.getWeekDay() ||
+                carPassOfDay.getWeekDay() == WeekDay.SATURDAY ||
+                carPassOfDay.getWeekDay() == WeekDay.SUNDAY;
+    }
+
+    public static void main(String[] args) {
+        MapDayAndNumber number = new MapDayAndNumber();
+        CarPassOfDay passOfDay = new CarPassOfDay(56443, WeekDay.FRIDAY);
+        ParkingManager parkingManager = new ParkingManager(number);
+        System.out.println(parkingManager.fiveDayPass(passOfDay));
     }
 }
