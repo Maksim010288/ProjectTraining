@@ -18,10 +18,4 @@ public class MyMap<K, V> {
             return null;
         }
     }
-
-    public static void main(String[] args) {
-        MyMap<Integer, String> myMap = new MyMap<>();
-        myMap.put(7865, "Honda");
-        System.out.println(myMap.get(0));
-    }
 }
