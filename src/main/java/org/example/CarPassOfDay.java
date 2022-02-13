@@ -9,6 +9,7 @@ public class CarPassOfDay {
         this.weekDay = weekDay;
     }
 
+
     public Integer getCarNumber() {
         return carNumber;
     }
