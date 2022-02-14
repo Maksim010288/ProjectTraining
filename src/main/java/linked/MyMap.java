@@ -3,40 +3,37 @@ package linked;
 import java.util.LinkedList;
 
 public class MyMap<K, V> implements MyMapInterface<K, V> {
-    LinkedList<Basket> baskets = new LinkedList<>();
-    int size = 0;
+    LinkedList<Entry> baskets = new LinkedList<>();
+    Entry entry;
 
     @Override
     public void put(K k, V v) {
-        size++;
-        baskets.add(new Basket(k, v));
+        baskets.add(new Entry(k, v));
     }
 
     @Override
-    public V get(int index) {
-        int count = 0;
-        for (Basket basket : baskets) {
-            if (count == index) {
-                return basket.getValue();
+    public V get(K key) {
+        for (Entry entry : baskets) {
+            if (entry.getKey().equals(key)) {
+                return entry.getValue();
             }
-            count++;
         }
         return null;
     }
 
     @Override
     public String toString() {
-        for (Basket basket : baskets){
+        for (Entry basket : baskets) {
             System.out.println(basket.getKey() + " " + basket.getValue());
         }
         return null;
     }
 
-    class Basket{
+    class Entry {
         private final K key;
         private final V value;
 
-        public Basket(K key, V value) {
+        public Entry(K key, V value) {
             this.key = key;
             this.value = value;
         }

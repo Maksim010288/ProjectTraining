@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.logging.Logger;
-
 public class CarPassOfDay {
     private int carNumber = 0;
     private WeekDay weekDay = null;
