@@ -1,16 +1,21 @@
 package linked_list;
 
 import linked.MyMap;
-import org.example.MapDayAndNumber;
+import org.example.WeekDay;
 
-import java.util.Map;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
-        MyMap<String, Integer> map = new MyMap<>();
-        map.put("Honda", 6754);
-        map.put("Opel", 54123);
-        map.put("Audi", 9087);
-        System.out.println(map.get(1));
+
+        MyMap<WeekDay, Integer> myMap = new MyMap<>();
+        myMap.put(WeekDay.MONDAY, 0);
+        myMap.put(WeekDay.TUESDAY, 1);
+        myMap.put(WeekDay.WEDNESDAY, 2);
+        myMap.put(WeekDay.THURSDAY, 3);
+        myMap.put(WeekDay.FRIDAY, 4);
+        System.out.println(myMap);
+        System.out.println(myMap.get(4));
+
     }
 }
