@@ -1,4 +1,4 @@
-package linked;
+package colections;
 
 public interface MyMapInterface<K, V> {
     public void put(K k, V v);

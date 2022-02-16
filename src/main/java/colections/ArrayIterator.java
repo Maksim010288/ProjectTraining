@@ -1,12 +1,12 @@
-package linked;
+package colections;
 
 import java.util.Iterator;
 
-public class ListIterator<E> implements Iterator<E> {
+public class ArrayIterator<E> implements Iterator<E> {
     private int index = 0;
     E[] values;
 
-    public ListIterator(E[] values){
+    public ArrayIterator(E[] values){
         this.values = values;
     }
 

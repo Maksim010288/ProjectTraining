@@ -1,4 +1,4 @@
-package org.example;
+package org.parking;
 
 public class ParkingManager {
     MapDayAndNumber mapDayAndNumber;

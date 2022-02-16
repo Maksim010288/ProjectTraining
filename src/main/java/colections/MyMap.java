@@ -1,14 +1,16 @@
-package linked;
+package colections;
 
 import java.util.LinkedList;
 import java.util.Objects;
 
 public class MyMap<K, V> implements MyMapInterface<K, V> {
     LinkedList<Entry> entries = new LinkedList<>();
-
+    Entry entrySize = new Entry();
+    int size = 0;
 
     @Override
     public void put(K k, V v) {
+        size++;
         for (Entry entry : entries) {
             if (entry.key.hashCode() == k.hashCode()) {
                 if(entry.key.equals(k)){
@@ -17,6 +19,7 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
             }
         }
         entries.add(new Entry(k, v));
+
     }
 
 
@@ -32,20 +35,26 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
         return null;
     }
 
+    public Integer size(){
+        return size;
+    }
+
     @Override
     public String toString() {
-        return entries + "";
+        return entries.toString();
     }
 
     class Entry {
         private K key;
         private V value;
 
+
         public Entry(K key, V value) {
             this.key = key;
             this.value = value;
         }
 
+        public Entry(){}
 
         public K getKey() {
             return key;
@@ -53,14 +62,6 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
 
         public V getValue() {
             return value;
-        }
-
-        private K setKey(K k) {
-            return key = k;
-        }
-
-        public V setValue(V v) {
-            return value = v;
         }
 
         @Override

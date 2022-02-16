@@ -1,4 +1,4 @@
-package linked;
+package colections;
 
 public interface MyCollection<E> {
     E add(E e);
