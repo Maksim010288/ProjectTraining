@@ -1,23 +1,18 @@
 package linked_list;
 
 import linked.MyMap;
-import org.example.WeekDay;
-
-import java.io.FileReader;
-import java.util.logging.Logger;
 
 public class Main {
-    final static Logger logger = Logger.getAnonymousLogger();
 
     public static void main(String[] args) {
-
-        MyMap<WeekDay, Integer> myMap = new MyMap<>();
-        myMap.put(WeekDay.THURSDAY, 3);
-        myMap.put(WeekDay.WEDNESDAY, 2);
-        myMap.put(WeekDay.MONDAY, 0);
-        myMap.put(WeekDay.TUESDAY, 1);
-        myMap.put(WeekDay.FRIDAY, 4);
-
+        MyMap<Integer, String> myMap = new MyMap<>();
+        myMap.put(67, "gruve");
+        myMap.put(876, "gruver");
+        myMap.put(876, "oksford");
+        myMap.put(67, "gruver");
+        myMap.put(376, "gru");
+        myMap.put(376, "gruver");
         System.out.println(myMap);
+        System.out.println(myMap.get(876));
     }
 }
