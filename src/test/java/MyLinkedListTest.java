@@ -1,4 +1,4 @@
-import linked_list.MyLinkedList;
+import linkedlist.MyLinkedList;
 import org.testng.annotations.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
