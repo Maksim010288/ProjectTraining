@@ -41,7 +41,33 @@ class MyMapTest {
         myMap.put(WeekDay.MONDAY, 0);
         myMap.put(WeekDay.TUESDAY, 1);
         assertEquals(1, myMap.get(WeekDay.TUESDAY));
-        assertEquals(6, myMap.size());
+        assertEquals(2, myMap.size());
+    }
+
+    @Test
+    void addOneObject(){
+        MyMap<WeekDay, Integer> myMap = new MyMap<>();
+        myMap.put(WeekDay.MONDAY, 0);
+        assertEquals("[MONDAY-0]", myMap.toString());
+    }
+
+    @Test
+    void addTwoObject(){
+        MyMap<WeekDay, Integer> myMap = new MyMap<>();
+        myMap.put(WeekDay.MONDAY, 0);
+        myMap.put(WeekDay.MONDAY, 1);
+        myMap.put(WeekDay.TUESDAY, 1);
+        assertEquals("[MONDAY-1, TUESDAY-1]", myMap.toString());
+    }
+
+    @Test
+    void addTForeObject(){
+        MyMap<WeekDay, Integer> myMap = new MyMap<>();
+        myMap.put(WeekDay.MONDAY, 0);
+        myMap.put(WeekDay.MONDAY, 1);
+        myMap.put(WeekDay.TUESDAY, 1);
+        myMap.put(WeekDay.TUESDAY, 2);
+        assertEquals("[MONDAY-1, TUESDAY-2]", myMap.toString());
     }
 
 }

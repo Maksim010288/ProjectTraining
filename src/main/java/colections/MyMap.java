@@ -1,5 +1,7 @@
 package colections;
 
+import org.parking.WeekDay;
+
 import java.util.LinkedList;
 import java.util.Objects;
 
@@ -13,7 +15,7 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
         size++;
         for (Entry entry : entries) {
             if (entry.key.hashCode() == k.hashCode()) {
-                if(entry.key.equals(k)){
+                if (entry.key.equals(k)) {
                     entries.remove(entry);
                 }
             }
@@ -35,7 +37,7 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
         return null;
     }
 
-    public Integer size(){
+    public Integer size() {
         return size;
     }
 
@@ -54,7 +56,8 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
             this.value = value;
         }
 
-        public Entry(){}
+        public Entry() {
+        }
 
         public K getKey() {
             return key;
