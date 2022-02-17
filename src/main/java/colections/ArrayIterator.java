@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 public class ArrayIterator<E> implements Iterator<E> {
     private int index = 0;
+    private double num = 0.4d;
     E[] values;
 
     public ArrayIterator(E[] values){
