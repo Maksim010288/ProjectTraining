@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public class MyMap<K, V> implements MyMapInterface<K, V> {
     LinkedList<Entry> entries = new LinkedList<>();
-    Entry entrySize = new Entry();
 
     @Override
     public void put(K k, V v) {
@@ -19,7 +18,6 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
         }
         entries.add(new Entry(k, v));
     }
-
 
     @Override
     public V get(K key) {
@@ -45,15 +43,10 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
     class Entry {
         private K key;
         private V value;
-        int size = 0;
-
 
         public Entry(K key, V value) {
             this.key = key;
             this.value = value;
-        }
-
-        public Entry() {
         }
 
         public K getKey() {
