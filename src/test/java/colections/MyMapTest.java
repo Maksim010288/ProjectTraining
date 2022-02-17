@@ -70,4 +70,19 @@ class MyMapTest {
         assertEquals("[MONDAY-1, TUESDAY-2]", myMap.toString());
     }
 
+    @Test
+    void zeroMonday(){
+        MyMap<Integer, WeekDay> myMap = new MyMap<>();
+        myMap.put(0, WeekDay.MONDAY);
+        assertEquals("[0-MONDAY]", myMap.toString());
+    }
+
+    @Test
+    void zeroTuesday(){
+        MyMap<Integer, WeekDay> myMap = new MyMap<>();
+        myMap.put(0, WeekDay.MONDAY);
+        myMap.put(0, WeekDay.TUESDAY);
+        assertEquals("[0-TUESDAY]", myMap.toString());
+    }
+
 }
