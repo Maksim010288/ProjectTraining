@@ -1,4 +1,4 @@
-package colections;
+package collections;
 
 public interface MyCollection<E> {
     E add(E e);

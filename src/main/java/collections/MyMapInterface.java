@@ -1,4 +1,4 @@
-package colections;
+package collections;
 
 public interface MyMapInterface<K, V> {
     public void put(K k, V v);

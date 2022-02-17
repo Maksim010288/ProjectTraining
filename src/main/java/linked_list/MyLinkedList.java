@@ -1,6 +1,6 @@
 package linked_list;
 
-import colections.MyCollection;
+import collections.MyCollection;
 
 
 public class MyLinkedList<E> implements MyCollection<E> {

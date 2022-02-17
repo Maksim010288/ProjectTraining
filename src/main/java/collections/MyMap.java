@@ -1,6 +1,4 @@
-package colections;
-
-import org.parking.WeekDay;
+package collections;
 
 import java.util.LinkedList;
 import java.util.Objects;
@@ -8,20 +6,18 @@ import java.util.Objects;
 public class MyMap<K, V> implements MyMapInterface<K, V> {
     LinkedList<Entry> entries = new LinkedList<>();
     Entry entrySize = new Entry();
-    int size = 0;
 
     @Override
     public void put(K k, V v) {
-        size++;
         for (Entry entry : entries) {
             if (entry.key.hashCode() == k.hashCode()) {
                 if (entry.key.equals(k)) {
                     entries.remove(entry);
+                    entries.size();
                 }
             }
         }
         entries.add(new Entry(k, v));
-
     }
 
 
@@ -38,7 +34,7 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
     }
 
     public Integer size() {
-        return size;
+        return entries.size();
     }
 
     @Override
@@ -49,6 +45,7 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
     class Entry {
         private K key;
         private V value;
+        int size = 0;
 
 
         public Entry(K key, V value) {
