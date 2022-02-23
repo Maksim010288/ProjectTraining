@@ -12,7 +12,7 @@ public class MyMap<K, V> implements MyMapInterface<K, V> {
         for (Entry entry : entries) {
             int remainderFromDivision = entry.key.hashCode() % 16;
             arrays[remainderFromDivision] = new Entry(entry.key, entry.value);
-            System.out.println(arrays[remainderFromDivision] + " поверх - " + remainderFromDivision);
+            System.out.println(arrays[remainderFromDivision] + " over - " + remainderFromDivision);
         }
     }
 
