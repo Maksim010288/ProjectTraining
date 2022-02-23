@@ -1,5 +1,6 @@
 package collections;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.parking.WeekDay;
 
@@ -34,7 +35,7 @@ class MyMapTest {
     }
 
     @Test
-    void should_overwrite_the_same_value(){
+    void should_overwrite_the_same_value() {
         MyMap<Integer, WeekDay> myMap = new MyMap<>();
         myMap.put(0, WeekDay.MONDAY);
         myMap.put(0, WeekDay.TUESDAY);

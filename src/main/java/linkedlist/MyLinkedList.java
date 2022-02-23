@@ -79,7 +79,7 @@ public class MyLinkedList<E> implements MyCollection<E> {
         while (counter != null) {
             if (count > endListElement) {
                 elementOutput = elementOutput.next;
-            }else if(count < 0){
+            } else if (count < 0) {
                 return null;
             }
             count++;
@@ -87,17 +87,17 @@ public class MyLinkedList<E> implements MyCollection<E> {
         }
         if (elementOutput != null) {
             return elementOutput.value;
-        }else {
+        } else {
             return null;
         }
     }
 
 
-public static class MyNode<E> {
-    public E value;
-    public MyNode<E> next;
-    MyNode<E> previous;
-}
+    public static class MyNode<E> {
+        public E value;
+        public MyNode<E> next;
+        MyNode<E> previous;
+    }
 }
 
 
